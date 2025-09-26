@@ -33,7 +33,7 @@ export interface TelemetryConfig {
 class TelemetryClient {
   private config: TelemetryConfig;
   private eventQueue: TelemetryEvent[] = [];
-  private flushTimer: NodeJS.Timeout | null = null;
+  private flushTimer: ReturnType<typeof setInterval> | null = null;
   private logger: Logger;
   private sessionId: string;
   private userId?: string;
