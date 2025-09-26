@@ -4,7 +4,7 @@
 
 ![AI 페어 프로그래머 프리뷰](preview-info-image.png)
 
-## 🎯 주요 기능
+## 주요 기능
 
 ### 실시간 코드 분석
 - **즉시 피드백**: 코드 작성과 동시에 품질 검사 및 개선사항 제안
@@ -21,29 +21,45 @@
 - **타입 안전성**: TypeScript를 활용한 강력한 타입 검사
 - **스키마 검증**: 데이터 구조 및 API 스펙 검증
 
-## 🚀 시작하기
+## 시작하기
 
 ### 필수 요구사항
 - Node.js 18.0.0 이상
-- npm 9.0.0 이상
+- npm 9.0.0 이상 또는 pnpm 8.0.0 이상
 
 ### 설치 및 실행
 
 ```bash
 # 1. 저장소 클론
-git clone https://github.com/your-username/ai-pair-programmer.git
+git clone https://github.com/your-org/ai-pair-programmer.git
 
 # 2. 프로젝트 디렉터리로 이동
 cd ai-pair-programmer
 
-# 3. 의존성 설치
-npm install
+# 3. 환경 설정 파일 복사
+cp .env.example .env.local
 
-# 4. 개발 서버 실행
+# 4. 의존성 설치
+npm install
+# 또는 pnpm을 사용하는 경우
+pnpm install
+
+# 5. 개발 서버 실행
 npm run dev
+# 또는
+pnpm dev
 ```
 
 개발 서버는 기본적으로 `http://localhost:8080`에서 실행됩니다.
+
+### 환경 설정
+
+`.env.local` 파일에서 다음 설정들을 구성하세요:
+- `OPENAI_API_KEY`: OpenAI API 키 (필수)
+- `TELEMETRY_ENABLED`: 텔레메트리 활성화 여부
+- `DEBUG_MODE`: 디버그 모드 활성화 여부
+
+자세한 설정은 `.env.example` 파일을 참조하세요.
 
 ## 🛠️ 기술 스택
 
@@ -83,7 +99,7 @@ src/
 └── styles/             # 스타일 파일
 ```
 
-## 🎨 주요 컴포넌트
+## 주요 컴포넌트
 
 ### Hero 섹션
 메인 랜딩 페이지의 히어로 섹션으로, AI 페어 프로그래머의 핵심 가치 제안을 시각적으로 표현합니다.
@@ -97,59 +113,55 @@ src/
 ### CodeDemo 섹션
 실제 코드 예시를 통해 AI 페어 프로그래머의 작동 방식을 보여줍니다.
 
-## 🔧 개발 스크립트
+## 🧪 테스트
 
 ```bash
-# 개발 서버 실행
-npm run dev
+# 단위 테스트 실행
+npm run test:unit
 
+# 통합 테스트 실행
+npm run test:integration
+
+# 보안 테스트 실행
+npm run test:security
+
+# 전체 테스트 커버리지
+npm run test:coverage
+
+# E2E 테스트 실행
+npm run test:e2e
+```
+
+## 📦 빌드 및 배포
+
+```bash
 # 프로덕션 빌드
 npm run build
 
-# 개발 모드 빌드
-npm run build:dev
+# 빌드 결과 분석
+npm run analyze
 
-# 린트 검사
-npm run lint
-
-# 빌드된 앱 미리보기
-npm run preview
+# 성능 체크
+npm run perf:check
 ```
-
-## 🌟 특징
-
-### 반응형 디자인
-모든 디바이스에서 최적화된 사용자 경험을 제공합니다.
-
-### 다크 모드 지원
-시스템 테마 또는 사용자 선호도에 따른 다크/라이트 모드 전환을 지원합니다.
-
-### 접근성 최적화
-WCAG 2.1 AA 수준의 접근성 가이드라인을 준수합니다.
-
-### 성능 최적화
-- 코드 스플리팅을 통한 빠른 초기 로딩
-- 이미지 최적화 및 지연 로딩
-- 효율적인 번들링으로 최소 번들 크기 달성
 
 ## 🤝 기여하기
 
-1. 이 저장소를 포크합니다
-2. 새로운 기능 브랜치를 생성합니다 (`git checkout -b feature/amazing-feature`)
-3. 변경사항을 커밋합니다 (`git commit -m 'Add amazing feature'`)
-4. 브랜치에 푸시합니다 (`git push origin feature/amazing-feature`)
-5. Pull Request를 생성합니다
+기여를 환영합니다! 자세한 가이드는 [기여 가이드](docs/guides/CONTRIBUTING.md)를 참조하세요.
 
-## 📄 라이선스
+## 📝 라이선스
 
 이 프로젝트는 MIT 라이선스 하에 배포됩니다. 자세한 내용은 `LICENSE` 파일을 참조하세요.
 
-## 📞 문의 및 지원
+## 🔗 관련 문서
 
-- 이슈 트래커: [GitHub Issues](https://github.com/your-username/ai-pair-programmer/issues)
-- 이메일: support@aipairprogrammer.dev
-- 문서: [프로젝트 위키](https://github.com/your-username/ai-pair-programmer/wiki)
+- [프로젝트 로드맵](docs/tasks/implementation-roadmap.md)
+- [마스터 태스크 리스트](docs/tasks/master-task-list.md)
+- [서비스 아키텍처](docs/prd/overview.md)
+- [API 문서](docs/prd/services/)
+- [변경 이력](docs/project-meta/CHANGELOG.md)
+- [프로젝트 구조](docs/architecture/)
 
 ---
 
-**AI 페어 프로그래머**와 함께 더 스마트하고 효율적인 개발 경험을 만들어보세요! 🚀
+**마지막 업데이트**: 2025년 9월 25일
